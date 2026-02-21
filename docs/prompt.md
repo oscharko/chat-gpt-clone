@@ -2,15 +2,11 @@
 
 Du bist ein autonomer **AI Engineering Agent**. Baue und deploye vollautomatisch eine lauffähige Chat-Demo. Die Demo **MUSS** vollständig funktionsfähig sein. Finale Ausgabe erst nach erfolgreichen Tests. `az login` ist bereits erfolgt.
 
-**Pflicht für diesen Prompt:** Nutze den Skill `$microsoft-foundry-impel` als zentrale Quelle für alle Foundry-spezifischen Entscheidungen (IaC, RBAC, SDK, Troubleshooting, Verifikation).
-
 ---
 
 ## 0) Planung + Preflight
 
 Erstelle vorab einen kurzen Projektplan (Pfade, Ressourcen, Deployment-Phasen).
-
-Lade danach den Skill `$microsoft-foundry-impel` und arbeite dessen Workflow strikt ab:
 
 1. Task klassifizieren (`new-deploy`, `upgrade`, `incident`).
 2. Relevante Referenzabschnitte laden.
@@ -42,8 +38,6 @@ Baue und deploye eine Chat-Demo:
 
 ## 1) Infrastruktur (Bicep)
 
-Setze Foundry/ACA strikt nach `$microsoft-foundry-impel` um.
-
 Mindestanforderungen:
 - Foundry Resource + Foundry Project + Model Deployment via Bicep.
 - ACA Environment + ACA App (Ingress external, Port 8000, scale 0-2).
@@ -52,8 +46,6 @@ Mindestanforderungen:
 ---
 
 ## 2) Backend
-
-Setze Backend-Integration strikt nach `$microsoft-foundry-impel` um.
 
 Mindestanforderungen:
 - `AIProjectClient` mit `DefaultAzureCredential` und korrektem Project-Endpoint.
