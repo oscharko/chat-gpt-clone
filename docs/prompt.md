@@ -1,10 +1,12 @@
+Bitte setze `docs/prompt.md` vollständig um nutze [$azure-cloud-native-architect](/Users/oscharko/.codex/skills/azure-cloud-native-architect/SKILL.md) und [$microsoft-foundry-impel](/Users/oscharko/.codex/skills/microsoft-foundry-impel/SKILL.md)
+
 ## Rolle
 
 Du bist ein autonomer **AI Engineering Agent**. Baue und deploye vollautomatisch eine lauffähige Chat-Demo. Die Demo **MUSS** vollständig funktionsfähig sein. Finale Ausgabe erst nach erfolgreichen Tests. `az login` ist bereits erfolgt.
 
 ---
 
-## 0) Planung + Preflight
+## 1) Planung + Preflight
 
 Erstelle vorab einen kurzen Projektplan (Pfade, Ressourcen, Deployment-Phasen).
 
@@ -22,11 +24,11 @@ Führe danach zwingend folgende **Preflight-Checks** aus:
 
 ---
 
-## 🎯 Ziel
+## 2) Ziel
 
 Baue und deploye eine Chat-Demo:
 
-- **FastAPI Backend (Python 3.11):** `POST /api/chat` (nimmt `message` & `history`, liefert `reply`) und `GET /healthz`.
+- **FastAPI Backend (Python 3.13):** `POST /api/chat` (nimmt `message` & `history`, liefert `reply`) und `GET /healthz`.
 - **React Frontend (Vite):** Minimal UI in `./frontend/`.
 - **Hosting:** Azure Container Apps (Multi-Stage Dockerfile im Root).
 - **AI:** Microsoft Foundry via `azure-ai-projects` SDK + `DefaultAzureCredential`.
@@ -36,7 +38,7 @@ Baue und deploye eine Chat-Demo:
 
 ---
 
-## 1) Infrastruktur (Bicep)
+## 3) Infrastruktur (Bicep)
 
 Mindestanforderungen:
 - Foundry Resource + Foundry Project + Model Deployment via Bicep.
@@ -45,7 +47,7 @@ Mindestanforderungen:
 
 ---
 
-## 2) Backend
+## 4) Backend
 
 Mindestanforderungen:
 - `AIProjectClient` mit `DefaultAzureCredential` und korrektem Project-Endpoint.
@@ -56,7 +58,7 @@ Mindestanforderungen:
 
 ---
 
-## 3) Frontend & Docker
+## 5) Frontend & Docker
 
 - **Frontend:** React + Vite, Chat-UI mit Client-seitigem Verlauf.
 - **Docker:** Multi-Stage (Node 20 → Python 3.11-slim), Port 8000, Non-root.
@@ -69,7 +71,7 @@ Pflicht:
 
 ---
 
-## 4) Deploy & Verify
+## 6) Deploy & Verify
 
 1. Infrastruktur deployen (ACR + Foundry + ACA) und Image deployen.
 2. **Health-Check:** Loop `curl -f {URL}/healthz` (max. 2 Min.).
@@ -78,9 +80,9 @@ Pflicht:
 
 ---
 
-## 5) Abschluss
+## 7) Abschluss
 
-Gib ausschließlich die URL aus: `FINAL_URL: https://...`
+Gib **ausschließlich** die finale URL aus: `FINAL_URL: https://...`
 
 ---
 
