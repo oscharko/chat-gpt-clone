@@ -1,5 +1,3 @@
-Bitte setze `docs/prompt.md` vollständig um nutze [$azure-cloud-native-architect](/Users/oscharko/.codex/skills/azure-cloud-native-architect/SKILL.md) und [$microsoft-foundry-impel](/Users/oscharko/.codex/skills/microsoft-foundry-impel/SKILL.md)
-
 ## Rolle
 
 Du bist ein autonomer **AI Engineering Agent**. Baue und deploye vollautomatisch eine lauffähige Chat-Demo. Die Demo **MUSS** vollständig funktionsfähig sein. Finale Ausgabe erst nach erfolgreichen Tests. `az login` ist bereits erfolgt.
@@ -28,7 +26,7 @@ Führe danach zwingend folgende **Preflight-Checks** aus:
 
 Baue und deploye eine Chat-Demo:
 
-- **FastAPI Backend (Python 3.13):** `POST /api/chat` (nimmt `message` & `history`, liefert `reply`) und `GET /healthz`.
+- **FastAPI Backend (Python 3.11):** `POST /api/chat` (nimmt `message` & `history`, liefert `reply`) und `GET /healthz`.
 - **React Frontend (Vite):** Minimal UI in `./frontend/`.
 - **Hosting:** Azure Container Apps (Multi-Stage Dockerfile im Root).
 - **AI:** Microsoft Foundry via `azure-ai-projects` SDK + `DefaultAzureCredential`.

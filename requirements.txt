@@ -1,0 +1,6 @@
+fastapi==0.115.0
+uvicorn[standard]==0.30.0
+azure-ai-projects==2.0.0b2
+azure-ai-inference==1.0.0b9
+azure-identity==1.19.0
+openai>=1.0.0,<2.0.0
